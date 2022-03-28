@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,26 +16,33 @@ public class SongInfo {
     // 일련번호
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="SONGINFO_NUMBER")
+    @Column(name="SONGINFO_NUMBER", nullable = false, unique = true)
     private Long songInfoNumber;
 
     // 노래제목
+    @Column(name="SONGINFO_NAME", nullable = false)
     private String songInfoName;
 
     // 가수
+    @Column(name="SONGINFO_SINGER", nullable = false)
     private String songInfoSinger;
 
     // 앨범 이미지 Url
+    @Column(name="SONGINFO_ALBUMURL", nullable = true)
     private String songInfoAlbumUrl;
 
     // 앨범이름
+    @Column(name="SONGINFO_ALBUM", nullable = false)
     private String songInfoAlbum;
 
     // 재생시간
+    @Column(name="SONGINFO_TIME", nullable = false)
     private String songInfoTime;
 
     // 리스트번호
-    private Long playListNumber;
+    @ManyToOne
+    @JoinColumn(name="PLAYLIST_NUMBER")
+    private PlayList playList;
 
     // Getter, Setter
     public Long getSongInfoNumber() {
@@ -84,12 +93,12 @@ public class SongInfo {
         this.songInfoTime = songInfoTime;
     }
 
-    public Long getPlayListNumber() {
-        return playListNumber;
+    public PlayList getPlayListNumber() {
+        return playList;
     }
 
-    public void setPlayListNumber(Long playListNumber) {
-        this.playListNumber = playListNumber;
+    public void setPlayListNumber(PlayList playList) {
+        this.playList = playList;
     }
 
     
