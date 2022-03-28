@@ -15,5 +15,8 @@ public interface PlayListService {
     
     // 플레이리스트 삭제
     List<PlayListDTO> deletePlayList();
+
+    // 좋아요 카운트
+    List<PlayListDTO> increaseFollow();
     
 }

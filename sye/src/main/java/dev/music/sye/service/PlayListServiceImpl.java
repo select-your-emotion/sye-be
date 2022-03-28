@@ -1,6 +1,8 @@
 package dev.music.sye.service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,12 @@ public class PlayListServiceImpl implements PlayListService{
     // 플레이리스트 삭제
     @Override
     public List<PlayListDTO> deletePlayList(){
+        return null;
+    }
+
+    // 좋아요 수 증가
+    @Override
+    public List<PlayListDTO> increaseFollow(){
         return null;
     }
 

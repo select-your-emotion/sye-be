@@ -14,13 +14,15 @@ public class PlayList {
     // 리스트번호
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="PLAYLIST_NUMBER")
+    @Column(name="PLAYLIST_NUMBER", nullable = false, unique = true)
     private int playListNumber;
     
     // 리스트이름
+    @Column(name="PLAYLIST_NAME", nullable = false)
     private String playListName;
 
     // 좋아요 수
+    @Column(name="PLAYLIST_FOLLOW", nullable = true)
     private int playListFollow;
 
     // Getter, Setter
