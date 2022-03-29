@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.service.SongInfoService;
 
@@ -26,13 +25,14 @@ public class SongInfoController {
     //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
     public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
         songInfoService.addSong(songInfoDTO);
-        System.out.println("addSong called!");
+        // System.out.println("addSong called!");
     }
 
     // 플레이리스트에서 노래 삭제
     @PostMapping("/deletesong")
-    public void deleteSong() {
-        System.out.println("deleteSong called!");
+    public void deleteSong(@RequestBody SongInfoDTO songInfoDTO) {
+        songInfoService.deleteSong(songInfoDTO);
+        // System.out.println("deleteSong called!");
     }
 
 }
