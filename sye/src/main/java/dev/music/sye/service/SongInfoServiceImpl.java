@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.model.entity.PlayList;
 import dev.music.sye.model.entity.SongInfo;
@@ -25,13 +24,10 @@ public class SongInfoServiceImpl implements SongInfoService{
     @Override
     public List<SongInfoDTO> addSong(SongInfoDTO songInfoDTO){
 
-        System.out.println(songInfoDTO.getPlayListName());
-
+        // songInfoDTO body의 playListName으로 playListRepository에 있는 playList 엔티티 검색
         PlayList playList = playListRepository.findByPlayListName(songInfoDTO.getPlayListName());
 
-        System.out.println(playList.getPlayListNumber());
-
-        //테이블에 저장할 SongInfo 생성
+        // 테이블에 저장할 SongInfo 생성
         SongInfo songInfo = new SongInfo();
         songInfo.setSongInfoName(songInfoDTO.getSongInfoName());
         songInfo.setSongInfoSinger(songInfoDTO.getSongInfoSinger());
@@ -48,7 +44,10 @@ public class SongInfoServiceImpl implements SongInfoService{
 
     // 플레이리스트에서 노래 삭제
     @Override
-    public List<SongInfoDTO> deleteSong(){
+    public List<SongInfoDTO> deleteSong(SongInfoDTO songinfoDTO){
+        SongInfo songInfo = songInfoRepository.findBySongInfoName(songinfoDTO.getSongInfoName());
+        songInfoRepository.delete(songInfo);
+
         return null;
     }
     

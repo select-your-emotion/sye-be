@@ -2,7 +2,6 @@ package dev.music.sye.service;
 
 import java.util.List;
 
-import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 
 public interface SongInfoService {
@@ -11,6 +10,6 @@ public interface SongInfoService {
     List<SongInfoDTO> addSong(SongInfoDTO songInfoDTO);
 
     // 플레이리스트에서 노래 삭제
-    List<SongInfoDTO> deleteSong();
+    List<SongInfoDTO> deleteSong(SongInfoDTO songInfoDTO);
     
 }
