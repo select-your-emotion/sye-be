@@ -20,19 +20,21 @@ public class SongInfoDTO {
     // 재생시간
     private String songInfoTime;
 
+    // 리스트이름
+    private String playListName;
+
     // 리스트번호
-    private Long playListNumber;
+    // private Long playList;
 
     // Constructor
     public SongInfoDTO(Long songInfoNumber, String songInfoName, String songInfoSinger, String songInfoAlbumUrl,
-            String songInfoAlbum, String songInfoTime, Long playListNumber) {
+            String songInfoAlbum, String songInfoTime) {
         this.songInfoNumber = songInfoNumber;
         this.songInfoName = songInfoName;
         this.songInfoSinger = songInfoSinger;
         this.songInfoAlbumUrl = songInfoAlbumUrl;
         this.songInfoAlbum = songInfoAlbum;
         this.songInfoTime = songInfoTime;
-        this.playListNumber = playListNumber;
     }
 
     // Getter, Setter
@@ -84,12 +86,12 @@ public class SongInfoDTO {
         this.songInfoTime = songInfoTime;
     }
 
-    public Long getPlayListNumber() {
-        return playListNumber;
+    public String getPlayListName() {
+        return playListName;
     }
 
-    public void setPlayListNumber(Long playListNumber) {
-        this.playListNumber = playListNumber;
+    public void setPlayListName(String playListName) {
+        this.playListName = playListName;
     }
-    
+
 }

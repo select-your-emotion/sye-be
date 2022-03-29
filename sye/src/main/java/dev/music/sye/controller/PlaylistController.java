@@ -15,15 +15,15 @@ import dev.music.sye.service.PlayListService;
 @RequestMapping("/api/v1/playlists")
 public class PlaylistController {
     
-    private final PlayListService playlistService;
+    private final PlayListService playListService;
 
-    public PlaylistController(PlayListService playlistService){
-        this.playlistService = playlistService;
+    public PlaylistController(PlayListService playListService){
+        this.playListService = playListService;
     }
 
     // 플레이 리스트 추가
     @PostMapping("/addPlayList")
-    //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
+    //public void addPlayList(@RequestBody PlayListDTO playListDTO) {
     public void addPlayList() {
         System.out.println("addPlayList called!");
     }
