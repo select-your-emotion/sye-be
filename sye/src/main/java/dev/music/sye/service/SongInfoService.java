@@ -2,7 +2,6 @@ package dev.music.sye.service;
 
 import java.util.List;
 
-import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 
 public interface SongInfoService {

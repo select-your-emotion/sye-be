@@ -36,7 +36,8 @@ public class PlaylistController {
 
     // 플레이리스트 삭제
     @PostMapping("/deletePlayList")
-    public void deletePlayList(@RequestParam String playListName) {
+    public void deletePlayList(@RequestBody PlayListDTO playListDTO) {
+        playListService.deletePlayList(playListDTO);
         System.out.println("deletePlayList called!");                
     }
 

@@ -14,7 +14,7 @@ public interface PlayListService {
     List<PlayListDTO> updatePlayList(String name);
     
     // 플레이리스트 삭제
-    List<PlayListDTO> deletePlayList();
+    void deletePlayList(PlayListDTO playListDTO);
 
     // 좋아요 카운트
     List<PlayListDTO> increaseFollow();
