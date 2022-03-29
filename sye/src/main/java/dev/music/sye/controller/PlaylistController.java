@@ -1,8 +1,8 @@
 package dev.music.sye.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +23,8 @@ public class PlaylistController {
 
     // 플레이 리스트 추가
     @PostMapping("/addPlayList")
-    //public void addPlayList(@RequestBody PlayListDTO playListDTO) {
-    public void addPlayList() {
+    public void addPlayList(@RequestBody PlayListDTO playListDTO) {
+        playListService.addPlayList(playListDTO);
         System.out.println("addPlayList called!");
     }
 

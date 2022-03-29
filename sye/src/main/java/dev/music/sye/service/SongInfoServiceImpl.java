@@ -27,7 +27,7 @@ public class SongInfoServiceImpl implements SongInfoService{
         // songInfoDTO body의 playListName으로 playListRepository에 있는 playList 엔티티 검색
         PlayList playList = playListRepository.findByPlayListName(songInfoDTO.getPlayListName());
 
-        //테이블에 저장할 SongInfo 생성
+        // 테이블에 저장할 SongInfo 생성
         SongInfo songInfo = new SongInfo();
         songInfo.setSongInfoName(songInfoDTO.getSongInfoName());
         songInfo.setSongInfoSinger(songInfoDTO.getSongInfoSinger());

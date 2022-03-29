@@ -8,7 +8,7 @@ import dev.music.sye.model.dto.PlayListDTO;
 public interface PlayListService {
     
     // 플레이리스트 추가
-    List<PlayListDTO> addPlayList();
+    void addPlayList(PlayListDTO playListDTO);
 
     // 플레이리스트 이름 변경
     List<PlayListDTO> updatePlayList(String name);

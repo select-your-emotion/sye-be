@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.music.sye.model.dto.PlayListDTO;
+import dev.music.sye.model.entity.PlayList;
 import dev.music.sye.repository.PlayListRepository;
 
 @Service
@@ -17,8 +18,14 @@ public class PlayListServiceImpl implements PlayListService{
 
     // 플레이리스트 추가
     @Override
-    public List<PlayListDTO> addPlayList() {
-        return null;
+    public void addPlayList(PlayListDTO playListDTO) {
+
+        // 테이블에 저장할 PlayList Entity 생성
+        PlayList playList = new PlayList();
+        playList.setPlayListName(playListDTO.getPlayListName());
+
+        playListRepository.save(playList);
+        
     }
 
     // 플레이리스트 이름 변경
