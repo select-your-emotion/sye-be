@@ -15,7 +15,7 @@ public class PlayList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="PLAYLIST_NUMBER", nullable = false, unique = true)
-    private int playListNumber;
+    private Long playListNumber;
     
     // 리스트이름
     @Column(name="PLAYLIST_NAME", nullable = false)
@@ -26,11 +26,11 @@ public class PlayList {
     private int playListFollow;
 
     // Getter, Setter
-    public int getPlayListNumber() {
+    public Long getPlayListNumber() {
         return playListNumber;
     }
 
-    public void setPlayListNumber(int playListNumber) {
+    public void setPlayListNumber(Long playListNumber) {
         this.playListNumber = playListNumber;
     }
 

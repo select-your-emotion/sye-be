@@ -11,16 +11,17 @@ public class PlayListDTO {
     // 좋아요 수
     private int playListFollow;
 
-    // Getter, Setter
-    public Long getPlayListNumber() {
-        return playListNumber;
-    }
-
+    
     // Constructor
     public PlayListDTO(Long playListNumber, String playListName, int playListFollow) {
         this.playListNumber = playListNumber;
         this.playListName = playListName;
         this.playListFollow = playListFollow;
+    }
+
+    // Getter, Setter
+    public Long getPlayListNumber() {
+        return playListNumber;
     }
 
     public void setPlayListNumber(Long playListNumber) {

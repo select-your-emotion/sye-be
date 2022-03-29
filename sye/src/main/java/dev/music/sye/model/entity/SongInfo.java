@@ -36,7 +36,7 @@ public class SongInfo {
     private String songInfoAlbum;
 
     // 재생시간
-    @Column(name="SONGINFO_TIME", nullable = false)
+    @Column(name="SONGINFO_TIME", nullable = true)
     private String songInfoTime;
 
     // 리스트번호
@@ -93,14 +93,12 @@ public class SongInfo {
         this.songInfoTime = songInfoTime;
     }
 
-    public PlayList getPlayListNumber() {
+    public PlayList getPlayList() {
         return playList;
     }
 
-    public void setPlayListNumber(PlayList playList) {
+    public void setPlayList(PlayList playList) {
         this.playList = playList;
     }
 
-    
-    
 }
