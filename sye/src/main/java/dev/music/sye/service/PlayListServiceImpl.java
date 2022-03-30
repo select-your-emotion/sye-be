@@ -38,8 +38,14 @@ public class PlayListServiceImpl implements PlayListService{
     // 플레이리스트 보여주기
     @Override
     public List<PlayListDTO> showPlayList(){
-        List<PlayList> playList = playListRepository.findAll();
-        List<PlayListDTO> result = playList.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
+        List<PlayList> playLists = playListRepository.findAll();
+
+        for(PlayList playList : playLists){
+            System.out.println("NAME : " + playList.getPlayListName());
+            System.out.println("THUMBNAIL : " + playList.getPlayListThumbnail());
+        }
+
+        List<PlayListDTO> result = playLists.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
 
         /*
         for(PlayListDTO playListDTO : result) {
@@ -87,9 +93,9 @@ public class PlayListServiceImpl implements PlayListService{
             System.out.println(song.getSongInfoName() + "   " + song.getPlayList().getPlayListName());
         }
                 
-        List<SongInfoDTO> result = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
+        List<SongInfoDTO> songList = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
 
-        return null;
+        return songList;
     }
 
     // 좋아요 수 증가

@@ -58,11 +58,4 @@ public class PlaylistController {
         return playListService.showSongList(playListDTO);
     }
 
-    /*
-    @GetMapping("/showList")
-    public void showList(@RequestParam String playListName) {
-        System.out.println("showList called!");        
-    }
-    */
-
 }
