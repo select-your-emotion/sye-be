@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.music.sye.model.dto.PlayListDTO;
+import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.model.entity.PlayList;
+import dev.music.sye.model.entity.SongInfo;
 import dev.music.sye.repository.PlayListRepository;
+import dev.music.sye.repository.SongInfoRepository;
 
 @Service
 public class PlayListServiceImpl implements PlayListService{
@@ -17,8 +20,8 @@ public class PlayListServiceImpl implements PlayListService{
     @Autowired
     private PlayListRepository playListRepository;
 
-    // @Autowired
-    // private SongInfoRepository songInfoRepository;
+    @Autowired
+    private SongInfoRepository songInfoRepository;
 
     // 플레이리스트 추가
     @Override
@@ -73,6 +76,20 @@ public class PlayListServiceImpl implements PlayListService{
 
         PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
         playListRepository.delete(playList);
+    }
+
+    public List<SongInfoDTO> showSongList(PlayListDTO playListDTO){
+        PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
+
+        // 반환할 플레이리스트의 노래들 목록 작성
+        List<SongInfo> songs = songInfoRepository.findAllByPlayList(playList);
+        for(SongInfo song : songs){
+            System.out.println(song.getSongInfoName() + "   " + song.getPlayList().getPlayListName());
+        }
+                
+        List<SongInfoDTO> result = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
+
+        return null;
     }
 
     // 좋아요 수 증가

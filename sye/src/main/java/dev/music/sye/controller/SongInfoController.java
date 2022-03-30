@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.service.SongInfoService;
 
@@ -25,8 +26,8 @@ public class SongInfoController {
     // 플레이리스트에 노래 추가
     @PostMapping("/addsong")
     //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
-    public List<SongInfoDTO> addSong(@RequestBody SongInfoDTO songInfoDTO ) {
-        return songInfoService.addSong(songInfoDTO);
+    public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
+        songInfoService.addSong(songInfoDTO);
         // System.out.println("addSong called!");
     }
 
