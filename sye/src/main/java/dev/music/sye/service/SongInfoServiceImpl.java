@@ -1,11 +1,11 @@
 package dev.music.sye.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.model.entity.PlayList;
 import dev.music.sye.model.entity.SongInfo;
@@ -23,7 +23,7 @@ public class SongInfoServiceImpl implements SongInfoService{
 
     // 플레이리스트에 노래 추가
     @Override
-    public List<SongInfoDTO> addSong(SongInfoDTO songInfoDTO){
+    public void addSong(SongInfoDTO songInfoDTO){
 
         // songInfoDTO body의 playListName으로 playListRepository에 있는 playList 엔티티 검색
         PlayList playList = playListRepository.findByPlayListName(songInfoDTO.getPlayListName());
@@ -42,15 +42,6 @@ public class SongInfoServiceImpl implements SongInfoService{
         // 저장
         songInfoRepository.save(songInfo);
 
-        // 반환할 플레이리스트의 노래들 목록 작성
-        List<SongInfo> songs = songInfoRepository.findAllByPlayList(playList);
-        for(SongInfo song : songs){
-            System.out.println(song.getSongInfoName() + "   " + song.getPlayList().getPlayListName());
-        }
-        
-        List<SongInfoDTO> result = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
-
-        return result;
     }
 
     // 플레이리스트에서 노래 삭제
@@ -59,6 +50,12 @@ public class SongInfoServiceImpl implements SongInfoService{
         SongInfo songInfo = songInfoRepository.findBySongInfoName(songinfoDTO.getSongInfoName());
         songInfoRepository.delete(songInfo);
 
+        return null;
+    }
+
+    // 플레이리스트의 노래들 추가
+    public List<SongInfoDTO> showSongList(PlayListDTO playListDTO){
+        
         return null;
     }
     

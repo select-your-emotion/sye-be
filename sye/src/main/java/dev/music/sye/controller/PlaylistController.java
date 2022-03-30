@@ -1,5 +1,7 @@
 package dev.music.sye.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.music.sye.model.dto.PlayListDTO;
+import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.service.PlayListService;
 
 @CrossOrigin(origins = "*")
@@ -47,6 +50,12 @@ public class PlaylistController {
     @PostMapping("/increaseFollow")
     public void increaseFollow(@RequestParam String playListName) {
         System.out.println("increaseFollow called!");
+    }
+
+    // 플레이리스트에 있는 노래들 전부 반환
+    @PostMapping("/showsonglist")
+    public List<SongInfoDTO> showSongList(@RequestBody PlayListDTO playListDTO) {
+        return playListService.showSongList(playListDTO);
     }
 
     /*
