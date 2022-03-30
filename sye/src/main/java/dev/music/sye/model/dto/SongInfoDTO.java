@@ -47,7 +47,7 @@ public class SongInfoDTO {
         this.songInfoAlbumUrl = songInfo.getSongInfoAlbumUrl();
         this.songInfoAlbum = songInfo.getSongInfoAlbum();
         this.songInfoTime = songInfo.getSongInfoTime();
-        // this.playList = songInfo.getPlayList();
+        this.playList = songInfo.getPlayList();
     }
 
     // Getter, Setter
