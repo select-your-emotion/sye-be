@@ -1,5 +1,8 @@
 package dev.music.sye.model.dto;
 
+import dev.music.sye.model.entity.PlayList;
+import dev.music.sye.model.entity.SongInfo;
+
 public class SongInfoDTO {
 
     // 일련번호
@@ -24,7 +27,7 @@ public class SongInfoDTO {
     private String playListName;
 
     // 리스트번호
-    // private Long playList;
+    private PlayList playList;
 
     // Constructor
     public SongInfoDTO(Long songInfoNumber, String songInfoName, String songInfoSinger, String songInfoAlbumUrl,
@@ -35,6 +38,16 @@ public class SongInfoDTO {
         this.songInfoAlbumUrl = songInfoAlbumUrl;
         this.songInfoAlbum = songInfoAlbum;
         this.songInfoTime = songInfoTime;
+    }
+
+    public SongInfoDTO(SongInfo songInfo){
+        this.songInfoNumber = songInfo.getSongInfoNumber();
+        this.songInfoName = songInfo.getSongInfoName();
+        this.songInfoSinger = songInfo.getSongInfoSinger();
+        this.songInfoAlbumUrl = songInfo.getSongInfoAlbumUrl();
+        this.songInfoAlbum = songInfo.getSongInfoAlbum();
+        this.songInfoTime = songInfo.getSongInfoTime();
+        this.playList = songInfo.getPlayList();
     }
 
     // Getter, Setter
@@ -92,6 +105,14 @@ public class SongInfoDTO {
 
     public void setPlayListName(String playListName) {
         this.playListName = playListName;
+    }
+
+    public PlayList getPlayList() {
+        return playList;
+    }
+
+    public void setPlayList(PlayList playList) {
+        this.playList = playList;
     }
 
 }

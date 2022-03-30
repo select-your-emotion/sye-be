@@ -1,6 +1,7 @@
 package dev.music.sye.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,7 @@ public class SongInfoServiceImpl implements SongInfoService{
         songInfo.setSongInfoName(songInfoDTO.getSongInfoName());
         songInfo.setSongInfoSinger(songInfoDTO.getSongInfoSinger());
         songInfo.setSongInfoAlbum(songInfoDTO.getSongInfoAlbum());
+        songInfo.setSongInfoAlbumUrl(songInfoDTO.getSongInfoAlbumUrl());
         songInfo.setSongInfoTime("2:25");
 
         // 맵핑
@@ -39,7 +41,16 @@ public class SongInfoServiceImpl implements SongInfoService{
                              
         // 저장
         songInfoRepository.save(songInfo);
-        return null;
+
+        // 반환할 플레이리스트의 노래들 목록 작성
+        List<SongInfo> songs = songInfoRepository.findAllByPlayList(playList);
+        for(SongInfo song : songs){
+            System.out.println(song.getSongInfoName() + "   " + song.getPlayList().getPlayListName());
+        }
+        
+        List<SongInfoDTO> result = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
+
+        return result;
     }
 
     // 플레이리스트에서 노래 삭제
