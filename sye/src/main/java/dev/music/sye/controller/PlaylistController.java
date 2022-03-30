@@ -1,6 +1,7 @@
 package dev.music.sye.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,10 +29,11 @@ public class PlaylistController {
         System.out.println("addPlayList called!");
     }
 
-    // 플레이리스트 이름 변경
-    @PostMapping("/updatePlayList")
-    public void updatePlayList() {
-        System.out.println("updatePlayList called!");
+    // 플레이리스트 보여주기
+    @GetMapping("/showPlayList")
+    public void showPlayList() {
+        playListService.showPlayList();
+        System.out.println("showPlayList called!");
     }
 
     // 플레이리스트 삭제
