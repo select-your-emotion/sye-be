@@ -1,15 +1,10 @@
 package dev.music.sye.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -26,13 +21,19 @@ public class PlayList {
     @Column(name="PLAYLIST_NAME", nullable = false)
     private String playListName;
 
+    // 리스트썸네일
+    @Column(name="PLAYLIST_THUMBNAIL", nullable = true)
+    private String playListThumbnail;
+
     // 좋아요 수
     @Column(name="PLAYLIST_FOLLOW", nullable = true)
     private int playListFollow;
 
+
     // Getter, Setter
-    public Long getPlayListNumber() {
-        return playListNumber;
+    
+    public void setPlayListThumbnail(String playListThumbnail) {
+        this.playListThumbnail = playListThumbnail;
     }
 
     public void setPlayListNumber(Long playListNumber) {
@@ -45,6 +46,14 @@ public class PlayList {
 
     public void setPlayListName(String playListName) {
         this.playListName = playListName;
+    }
+
+    public Long getPlayListNumber() {
+        return playListNumber;
+    }
+
+    public String getPlayListThumbnail() {
+        return playListThumbnail;
     }
 
     public int getPlayListFollow() {

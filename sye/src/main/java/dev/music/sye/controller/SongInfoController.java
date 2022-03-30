@@ -1,14 +1,11 @@
 package dev.music.sye.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.dto.SongInfoDTO;
 import dev.music.sye.service.SongInfoService;
 
