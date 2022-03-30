@@ -2,15 +2,14 @@ package dev.music.sye.service;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import dev.music.sye.model.dto.PlayListDTO;
 import dev.music.sye.model.entity.PlayList;
-import dev.music.sye.model.entity.SongInfo;
 import dev.music.sye.repository.PlayListRepository;
-import dev.music.sye.repository.SongInfoRepository;
 
 @Service
 public class PlayListServiceImpl implements PlayListService{
@@ -33,10 +32,19 @@ public class PlayListServiceImpl implements PlayListService{
         
     }
 
-    // 플레이리스트 이름 변경
+    // 플레이리스트 보여주기
     @Override
-    public List<PlayListDTO> updatePlayList(String name){
-        return null;
+    public List<PlayListDTO> showPlayList(){
+        List<PlayList> playList = playListRepository.findAll();
+        List<PlayListDTO> result = playList.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
+
+        /*
+        for(PlayListDTO playListDTO : result) {
+            System.out.println(playListDTO.getPlayListNumber());
+        }
+        */
+
+        return result;
     }
     
     // 플레이리스트 삭제

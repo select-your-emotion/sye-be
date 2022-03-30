@@ -10,8 +10,8 @@ public interface PlayListService {
     // 플레이리스트 추가
     void addPlayList(PlayListDTO playListDTO);
 
-    // 플레이리스트 이름 변경
-    List<PlayListDTO> updatePlayList(String name);
+    // 플레이리스트 DTO들을 반환해주는 서비스
+    List<PlayListDTO> showPlayList();
     
     // 플레이리스트 삭제
     void deletePlayList(PlayListDTO playListDTO);

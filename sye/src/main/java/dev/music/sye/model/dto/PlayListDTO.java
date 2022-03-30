@@ -1,5 +1,7 @@
 package dev.music.sye.model.dto;
 
+import dev.music.sye.model.entity.PlayList;
+
 public class PlayListDTO {
 
     // 리스트번호
@@ -17,6 +19,12 @@ public class PlayListDTO {
         this.playListNumber = playListNumber;
         this.playListName = playListName;
         this.playListFollow = playListFollow;
+    }
+
+    public PlayListDTO(PlayList playList) {
+        this.playListNumber = playList.getPlayListNumber();
+        this.playListName = playList.getPlayListName();
+        this.playListFollow = playList.getPlayListFollow();
     }
 
     // Getter, Setter
