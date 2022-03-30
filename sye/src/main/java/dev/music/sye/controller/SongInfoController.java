@@ -1,7 +1,8 @@
 package dev.music.sye.controller;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class SongInfoController {
     }
 
     // 플레이리스트에 노래 추가
-    @PostMapping("/addsong")
+    @PutMapping()
     //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
     public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
         songInfoService.addSong(songInfoDTO);
@@ -29,7 +30,7 @@ public class SongInfoController {
     }
 
     // 플레이리스트에서 노래 삭제
-    @PostMapping("/deletesong")
+    @DeleteMapping()
     public void deleteSong(@RequestBody SongInfoDTO songInfoDTO) {
         songInfoService.deleteSong(songInfoDTO);
         // System.out.println("deleteSong called!");

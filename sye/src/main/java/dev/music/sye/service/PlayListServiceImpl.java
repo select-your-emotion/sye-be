@@ -30,6 +30,7 @@ public class PlayListServiceImpl implements PlayListService{
         // 테이블에 저장할 PlayList Entity 생성
         PlayList playList = new PlayList();
         playList.setPlayListName(playListDTO.getPlayListName());
+        playList.setPlayListThumbnail("https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist.jpg?alt=media");
 
         playListRepository.save(playList);
         
@@ -46,12 +47,6 @@ public class PlayListServiceImpl implements PlayListService{
         }
 
         List<PlayListDTO> result = playLists.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
-
-        /*
-        for(PlayListDTO playListDTO : result) {
-            System.out.println(playListDTO.getPlayListNumber());
-        }
-        */
 
         return result;
     }
