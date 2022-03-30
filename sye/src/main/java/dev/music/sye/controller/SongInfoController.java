@@ -1,5 +1,7 @@
 package dev.music.sye.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,8 +25,8 @@ public class SongInfoController {
     // 플레이리스트에 노래 추가
     @PostMapping("/addsong")
     //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
-    public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
-        songInfoService.addSong(songInfoDTO);
+    public List<SongInfoDTO> addSong(@RequestBody SongInfoDTO songInfoDTO ) {
+        return songInfoService.addSong(songInfoDTO);
         // System.out.println("addSong called!");
     }
 
