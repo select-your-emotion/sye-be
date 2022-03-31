@@ -14,7 +14,7 @@
 ## 🐰 맡은 역할
 
 ## 📖 API Documentation
-+ [Overview](https://documenter.getpostman.com/view/19511452/UVypzd8x#api-overview)
++ [Overview](https://documenter.getpostman.com/view/19511452/UVypzd8x)
 
 
 ## 🐭 실행 화면
