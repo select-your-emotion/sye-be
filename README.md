@@ -52,6 +52,19 @@
    + addSong : 플레이리스트에 해당 노래를 추가, 반환값 없음.
    + deleteSong : 플레이리스트에 해당 노래를 삭제, 반환값 없음.
 
+## :bell: FE UI 초기 구상 (use Drwa.io)
++ Door page
+![대문](https://user-images.githubusercontent.com/59858894/161069859-1ec4351a-96fd-4408-a3f1-e4247fa1658a.PNG)
+
++ Main page
+![메인](https://user-images.githubusercontent.com/59858894/161071702-eb6e7652-f2ee-4682-b167-6b30ed529dd4.PNG)
+
++ playlistMake page
+![플레이리스트추가](https://user-images.githubusercontent.com/59858894/161070134-0ba952a8-1faa-4197-881a-505f64307533.PNG)
+
++ showPlaylist page
+![플레이리스트](https://user-images.githubusercontent.com/59858894/161070147-d8ea3559-9a8b-4c51-b822-4afd5ae26c6b.PNG)
+
 ## :bulb:주요 로직
 ### Front-end
   + [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) 
