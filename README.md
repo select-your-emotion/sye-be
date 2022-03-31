@@ -73,8 +73,15 @@
 
 ## 🐯 Issue
 ### Front-end
-+ 1
-+ 2
++ react 페이지 연동 오류
+  + 각각의 페이지를 연동할 때, 각자 사용한 모듈의 버전이 달라 route가 되지 않았다.
+  + react-router-dom을 6v -> 5v로 하양하여 연동하였다.
++ 연동 후 각 기능 구현 오류
+  + 페이지 연동 후 기능이 정상적으로 작동하지 않았다.
+  + 상위 컴포넌트로 route를 이동하여 수정하였다.
++ 서버로 데이터 sending시 반환값 undefined
+  + 기존 서버에서 @GetMapping으로 데이터를 받아올 때 undefined를 반환받았다.
+  + controller에 return이 없어서 반환하지 못했기 때문에 return을 추가하였다. 
     
 ### Back-end
 + 1
