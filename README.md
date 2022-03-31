@@ -1,7 +1,7 @@
 ## Select your EmotioN
 
 + 🐱 팀원 : 김민준, 김진주, 이정훈, 이승현
-+ 🐹 프로젝트 소개 : 네이버 검색 API를 활용한 도서 검색 사이트 구축
++ 🐹 프로젝트 소개 : 음원 검색 API를 활용한 나만의 플레이리스트 생성 사이트 구축
 + 💪 소요 기간 : 22/03/25 ~ 22/03/31
 + 🛠️ Tech
   + React
@@ -18,21 +18,52 @@
 + [spotify API](https://developer.spotify.com/console/)
 
 ## :mag:기능 구현
-+ Front-end
+### Front-end
   + Spotify API를 이용한 로그인 기능
   + Spotify API를 이용한 앨범, 아티스트, 트랙 정보 검색 기능
-  + 플레이리스트 생성 및 곡 추가시 Back-end로 정보를 보내고 DB에 저장
+  + 플레이리스트 생성 및 곡 추가 시 Back-end로 정보를 보내고 DB에 저장
   + Spring 서버 중계를 통해 DB 연동
+  + 사용 모듈
+    + "axios": "0.26.1"
+    + "bootstrap": "5.1.3"
+    + "react": "17.0.2"
+    + "react-bootstrap": "2.2.2"
+    + "react-dom": "17.0.2"
+    + "react-icons": "4.3.1"
+    + "react-redux": "7.2.6"
+    + "react-router-dom": "5.3.0"
+    + "react-scripts": "5.0.0"
+    + "redux": "4.1.2"
+    + "redux-thunk": "2.4.1"
+    + "spotify": "0.3.0",
+    + "spotify-web-api-js": "1.5.2"
+    + "spotify-web-api-node": "5.0.2"
 
-+ Back
-  + ㄴㄴ
-  + ㄴㄴ
-  + ㄴㄴ
+### Back-end
+  + PlayListService
+    + addPlayList : 새로운 플레이리스트 생성 후 플레이리스트 이름, 썸네일URL을 반환.
+    + showPlayList : 생성되어 있는 플레이리스트들의 이름과 썸네일URL 리스트를 반환.
+    + updatePlayList : 플레이리스트의 이름을 변경  (어떤 값을 반환해야 할지 아직 프론트랑 상의 안됨, 추후 수정될 수 있음)
+    + deletePlayList : 플레이리스트를 삭제, 플레이리스트에 있는 노래들도 모두 삭제, 반환값 없음.
+    + showSongList : 현재 플레이리스트에 있는 노래들의 정보를 모두 반환함.
+    + increaseFollow : 좋아요 수 증가 (아직 구현 안됨, 우선순위 낮음)
+    
+ + SongInfoService
+   + addSong : 플레이리스트에 해당 노래를 추가, 반환값 없음.
+   + deleteSong : 플레이리스트에 해당 노래를 삭제, 반환값 없음.
 
 ## :bulb:주요 로직
-+ ㄴㄴ
-+ ㄴㄴ
-+ 
+### Front-end
+  + [react-router-dom](https://v5.reactrouter.com/web/guides/quick-start) 
+    + BrowserRouter - history API를 이용해 URL과 UI를 동기화
+    + Switch - 자식 컴포넌트 Route또는 Redirect중 매치되는 첫 번째 요소를 렌더링합니다. 
+    + Route - 컴포넌트 URL과 경로가 일치하면 해당하는 컴포넌트, 함수를 렌더링
+    + Link - to속성에 설정된 링크로 이동, 기록이 history스택에 저장 ('a'태그와 유사한 기능)
+    
+### Back-end
+  + 테이블 설계  <br/>
+  ![7](https://user-images.githubusercontent.com/59858894/161004653-cb34b6c1-008b-4b49-a97f-1ab8806811ec.PNG)
+
 
 ## 🐭 실행 화면
 
@@ -41,6 +72,12 @@
 
 
 ## 🐯 Issue
-
+### Front-end
++ 1
++ 2
+    
+### Back-end
++ 1
++ 2
 
 ## 🐻 개선해야 할 점
