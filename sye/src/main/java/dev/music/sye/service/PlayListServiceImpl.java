@@ -4,6 +4,8 @@ package dev.music.sye.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -64,6 +66,20 @@ public class PlayListServiceImpl implements PlayListService{
 
         return result;
     }
+
+    // 플레이리스트 이름 변경
+    @Override
+    @Transactional
+    public void updatePlayList(String currentName, String toChangeName) {
+
+        // 실행될 쿼리문
+        // UPDATE PLAYLIST SET PLAYLIST_NAME = ? WHERE PLAYLIST_NUMBER = ?
+
+        Long playListNumber = playListRepository.findByPlayListName(currentName).getPlayListNumber();
+        System.out.println(playListNumber);
+        playListRepository.updatePlayListName(toChangeName, playListNumber);
+
+    }
     
     // 플레이리스트 삭제
     @Override
@@ -91,6 +107,7 @@ public class PlayListServiceImpl implements PlayListService{
 
         PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
         playListRepository.delete(playList);
+
     }
 
     public List<SongInfoDTO> showSongList(PlayListDTO playListDTO){

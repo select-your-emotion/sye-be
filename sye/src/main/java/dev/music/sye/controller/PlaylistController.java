@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dev.music.sye.model.dto.PlayListDTO;
@@ -37,6 +39,13 @@ public class PlaylistController {
     public List<PlayListDTO> showPlayList() {
         System.out.println("showPlayList called!");
         return playListService.showPlayList();
+    }
+
+    // 플레이리스트 이름 변경
+    @PutMapping()
+    public void updatePlayList(@RequestParam String currentName, @RequestParam String toChangeName) {
+        System.out.println("updatePlayList called!");
+        playListService.updatePlayList(currentName, toChangeName);
     }
 
     // 플레이리스트 삭제

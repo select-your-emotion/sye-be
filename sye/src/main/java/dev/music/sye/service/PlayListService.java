@@ -13,6 +13,9 @@ public interface PlayListService {
 
     // 플레이리스트 DTO들을 반환해주는 서비스
     List<PlayListDTO> showPlayList();
+
+    // 플레이리스트 이름 변경
+    void updatePlayList(String currentName, String toChangeName);
     
     // 플레이리스트 삭제
     void deletePlayList(PlayListDTO playListDTO);
