@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,7 +26,7 @@ public class PlaylistController {
     }
 
     // 플레이 리스트 추가
-    @PutMapping()
+    @PostMapping("/addplaylist")
     public void addPlayList(@RequestBody PlayListDTO playListDTO) {
         System.out.println("addPlayList called!");
         playListService.addPlayList(playListDTO);
