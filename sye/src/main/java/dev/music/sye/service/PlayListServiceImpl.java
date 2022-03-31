@@ -1,6 +1,5 @@
 package dev.music.sye.service;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,19 +51,13 @@ public class PlayListServiceImpl implements PlayListService{
         
     }
 
-    // 플레이리스트 보여주기
+    // 생성되어 있는 플레이리스트 목록 보여주기
     @Override
     public List<PlayListDTO> showPlayList(){
-        List<PlayList> playLists = playListRepository.findAll();
+        List<PlayList> playListsGroup = playListRepository.findAll();
+        List<PlayListDTO> playLists = playListsGroup.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
 
-        for(PlayList playList : playLists){
-            System.out.println("NAME : " + playList.getPlayListName());
-            System.out.println("THUMBNAIL : " + playList.getPlayListThumbnail());
-        }
-
-        List<PlayListDTO> result = playLists.stream().map(v -> new PlayListDTO(v)).collect(Collectors.toList());
-
-        return result;
+        return playLists;
     }
 
     // 플레이리스트 이름 변경
@@ -76,7 +69,6 @@ public class PlayListServiceImpl implements PlayListService{
         // UPDATE PLAYLIST SET PLAYLIST_NAME = ? WHERE PLAYLIST_NUMBER = ?
 
         Long playListNumber = playListRepository.findByPlayListName(currentName).getPlayListNumber();
-        System.out.println(playListNumber);
         playListRepository.updatePlayListName(toChangeName, playListNumber);
 
     }
@@ -85,49 +77,20 @@ public class PlayListServiceImpl implements PlayListService{
     @Override
     public void deletePlayList(PlayListDTO playListDTO){
 
-        // Foreign Key 관계를 맺고 있는 SongInfo 엔티티부터 삭제하기 위해 Repository에서 데이터 추출
-        // 1. playListRepository에서 playListName에 해당하는 playListNumber 추출
-        // PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
-        // PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
-        // Long playListNumber = playListRepository.findByPlayListName(playListDTO.getPlayListName()).getPlayListNumber();
-
-        // System.out.println("playListNumber" + playListNumber);
-
-        /*
-        // 2. playListNumber에 해당하는 songInfo 엔티티들을 List로 담은 뒤 삭제쿼리 실행
-        List<SongInfo> songInfoList = songInfoRepository.findAllByPlayListNumber(playListNumber);
-        int cnt = 0;
-        for(SongInfo songInfo : songInfoList){
-            System.out.println("cnt : " + ++cnt);
-            songInfoRepository.delete(songInfo);
-        }
-
-        System.out.println("cnt : " + cnt);
-        */
-
         PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
         playListRepository.delete(playList);
 
     }
 
+    @Override
     public List<SongInfoDTO> showSongList(PlayListDTO playListDTO){
         PlayList playList = playListRepository.findByPlayListName(playListDTO.getPlayListName());
 
         // 반환할 플레이리스트의 노래들 목록 작성
         List<SongInfo> songs = songInfoRepository.findAllByPlayList(playList);
-        for(SongInfo song : songs){
-            System.out.println(song.getSongInfoName() + "   " + song.getPlayList().getPlayListName());
-        }
-                
         List<SongInfoDTO> songList = songs.stream().map(v -> new SongInfoDTO(v)).collect(Collectors.toList());
 
         return songList;
-    }
-
-    // 좋아요 수 증가
-    @Override
-    public List<PlayListDTO> increaseFollow(){
-        return null;
     }
 
 }

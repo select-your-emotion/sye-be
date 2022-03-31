@@ -12,30 +12,25 @@ public class PlayListDTO {
 
     // 리스트 썸네일 이미지
     private String playListThumbnail;
-
-    // 좋아요 수
-    private int playListFollow;
-
     
+
     // Constructor
-    public PlayListDTO(Long playListNumber, String playListName, String playListThumbnail, int playListFollow) {
+    public PlayListDTO(Long playListNumber, String playListName, String playListThumbnail) {
         this.playListNumber = playListNumber;
         this.playListName = playListName;
         this.playListThumbnail = playListThumbnail;
-        this.playListFollow = playListFollow;
     }
 
     public PlayListDTO(PlayList playList) {
         this.playListNumber = playList.getPlayListNumber();
         this.playListName = playList.getPlayListName();
         this.playListThumbnail = playList.getPlayListThumbnail();
-        this.playListFollow = playList.getPlayListFollow();
     }
 
 
     // Getter, Setter
-    public void setPlayListThumbnail(String playListThumbnail) {
-        this.playListThumbnail = playListThumbnail;
+    public Long getPlayListNumber() {
+        return playListNumber;
     }
 
     public void setPlayListNumber(Long playListNumber) {
@@ -50,20 +45,12 @@ public class PlayListDTO {
         this.playListName = playListName;
     }
 
-    public Long getPlayListNumber() {
-        return playListNumber;
-    }
-
     public String getPlayListThumbnail() {
         return playListThumbnail;
     }
 
-    public int getPlayListFollow() {
-        return playListFollow;
+    public void setPlayListThumbnail(String playListThumbnail) {
+        this.playListThumbnail = playListThumbnail;
     }
 
-    public void setPlayListFollow(int playListFollow) {
-        this.playListFollow = playListFollow;
-    }
-    
 }

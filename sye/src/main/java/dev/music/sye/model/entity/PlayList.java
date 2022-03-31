@@ -25,17 +25,12 @@ public class PlayList {
     @Column(name="PLAYLIST_THUMBNAIL", nullable = true)
     private String playListThumbnail;
 
-    // 좋아요 수
-    @Column(name="PLAYLIST_FOLLOW", nullable = true)
-    private int playListFollow;
-
 
     // Getter, Setter
-    
-    public void setPlayListThumbnail(String playListThumbnail) {
-        this.playListThumbnail = playListThumbnail;
+    public Long getPlayListNumber() {
+        return playListNumber;
     }
-
+    
     public void setPlayListNumber(Long playListNumber) {
         this.playListNumber = playListNumber;
     }
@@ -48,20 +43,12 @@ public class PlayList {
         this.playListName = playListName;
     }
 
-    public Long getPlayListNumber() {
-        return playListNumber;
-    }
-
     public String getPlayListThumbnail() {
         return playListThumbnail;
     }
 
-    public int getPlayListFollow() {
-        return playListFollow;
-    }
-
-    public void setPlayListFollow(int playListFollow) {
-        this.playListFollow = playListFollow;
+    public void setPlayListThumbnail(String playListThumbnail) {
+        this.playListThumbnail = playListThumbnail;
     }
 
 }
