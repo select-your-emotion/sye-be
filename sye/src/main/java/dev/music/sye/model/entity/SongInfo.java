@@ -35,15 +35,12 @@ public class SongInfo {
     @Column(name="SONGINFO_ALBUM", nullable = false)
     private String songInfoAlbum;
 
-    // 재생시간
-    @Column(name="SONGINFO_TIME", nullable = true)
-    private String songInfoTime;
-
     // 리스트번호
     @ManyToOne
     @JoinColumn(name="PLAYLIST_NUMBER")
     private PlayList playList;
 
+    
     // Getter, Setter
     public Long getSongInfoNumber() {
         return songInfoNumber;
@@ -83,14 +80,6 @@ public class SongInfo {
 
     public void setSongInfoAlbum(String songInfoAlbum) {
         this.songInfoAlbum = songInfoAlbum;
-    }
-
-    public String getSongInfoTime() {
-        return songInfoTime;
-    }
-
-    public void setSongInfoTime(String songInfoTime) {
-        this.songInfoTime = songInfoTime;
     }
 
     public PlayList getPlayList() {

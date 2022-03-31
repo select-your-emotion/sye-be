@@ -23,17 +23,14 @@ public class SongInfoController {
 
     // 플레이리스트에 노래 추가
     @PostMapping()
-    //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
     public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
         songInfoService.addSong(songInfoDTO);
-        // System.out.println("addSong called!");
     }
 
     // 플레이리스트에서 노래 삭제
     @DeleteMapping()
     public void deleteSong(@RequestBody SongInfoDTO songInfoDTO) {
         songInfoService.deleteSong(songInfoDTO);
-        // System.out.println("deleteSong called!");
     }
 
 }

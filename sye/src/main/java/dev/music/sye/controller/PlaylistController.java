@@ -30,38 +30,26 @@ public class PlaylistController {
     // 플레이 리스트 추가
     @PostMapping("/addplaylist")
     public PlayListDTO addPlayList(@RequestBody PlayListDTO playListDTO) {
-        System.out.println("addPlayList called!");
         return playListService.addPlayList(playListDTO);
     }
 
-    // 플레이리스트 보여주기
+    // 생성되어 있는 플레이리스트 목록 보여주기
     @GetMapping()
     public List<PlayListDTO> showPlayList() {
-        System.out.println("showPlayList called!");
         return playListService.showPlayList();
     }
 
     // 플레이리스트 이름 변경
     @PutMapping()
     public void updatePlayList(@RequestParam String currentName, @RequestParam String toChangeName) {
-        System.out.println("updatePlayList called!");
         playListService.updatePlayList(currentName, toChangeName);
     }
 
     // 플레이리스트 삭제
     @DeleteMapping()
     public void deletePlayList(@RequestBody PlayListDTO playListDTO) {
-        System.out.println("deletePlayList called!");
         playListService.deletePlayList(playListDTO);                
     }
-
-    /*
-    // 좋아요 수 증가
-    @PostMapping("/increaseFollow")
-    public void increaseFollow(@RequestParam String playListName) {
-        System.out.println("increaseFollow called!");
-    }
-    */
 
     // 플레이리스트에 있는 노래들 전부 반환
     @PostMapping("/showsonglist")
