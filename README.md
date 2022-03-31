@@ -84,7 +84,12 @@
   + controller에 return이 없어서 반환하지 못했기 때문에 return을 추가하였다. 
     
 ### Back-end
-+ 1
-+ 2
++ Repository에서 DB에 Native Query 요청 시 서버 실행이 되지 않는 문제
+  + Query 어노테이션의 nativeQuery 속성을 true로 설정
++ 서버로 UPDATE Native Query DB에 요청할 때 TransactionRequiredException 에러
+  + 서비스를 구현하는 메서드에 @Transactional 추가
 
 ## 🐻 개선해야 할 점
++ 각 서비스 요청 시에 예외 처리가 구현되어 있지 않음
+  + ex1 : 플레이리스트가 없는데 플레이리스트 삭제 요청을 하는 경우
+  + ex2 : 플레이리스트에 노래가 없을 때 노래 삭제 요청을 하는 경우
