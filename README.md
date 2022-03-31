@@ -3,15 +3,21 @@
 + 🐱 팀원 : 김민준, 김진주, 이정훈, 이승현
 + 🐹 프로젝트 소개 : 음원 검색 API를 활용한 나만의 플레이리스트 생성 사이트 구축
 + 💪 소요 기간 : 22/03/25 ~ 22/03/31
-+ 🛠️ Tech
-  + React
-  + CSS
-  + Javascript
-  + Java
-  + Spring JPA
-
++ 🛠️ Tech <br/><br/>
+  <img alt="React" src="https://img.shields.io/badge/-React-45b8d8?style=flat-square&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?&style=flat-square&logo=html5&logoColor=white"/> 
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" /> 
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=flat-square&logo=javascript&logoColor=F7DF1E" />
+  <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white" />
+  <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
+  
 
 ## 🐰 맡은 역할
+### Front
+
+### Back
+ 
 
 ## 📖 API Documentation
 + [Overview](https://documenter.getpostman.com/view/19511452/UVypzd8x)
