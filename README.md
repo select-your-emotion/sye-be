@@ -15,7 +15,24 @@
 
 ## 📖 API Documentation
 + [Overview](https://documenter.getpostman.com/view/19511452/UVypzd8x)
++ [spotify API](https://developer.spotify.com/console/)
 
+## :mag:기능 구현
++ Front-end
+  + Spotify API를 이용한 로그인 기능
+  + Spotify API를 이용한 앨범, 아티스트, 트랙 정보 검색 기능
+  + 플레이리스트 생성 및 곡 추가시 Back-end로 정보를 보내고 DB에 저장
+  + Spring 서버 중계를 통해 DB 연동
+
++ Back
+  + ㄴㄴ
+  + ㄴㄴ
+  + ㄴㄴ
+
+## :bulb:주요 로직
++ ㄴㄴ
++ ㄴㄴ
++ 
 
 ## 🐭 실행 화면
 
