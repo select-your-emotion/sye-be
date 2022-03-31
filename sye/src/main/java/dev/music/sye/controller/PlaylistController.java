@@ -27,9 +27,9 @@ public class PlaylistController {
 
     // 플레이 리스트 추가
     @PostMapping("/addplaylist")
-    public void addPlayList(@RequestBody PlayListDTO playListDTO) {
+    public PlayListDTO addPlayList(@RequestBody PlayListDTO playListDTO) {
         System.out.println("addPlayList called!");
-        playListService.addPlayList(playListDTO);
+        return playListService.addPlayList(playListDTO);
     }
 
     // 플레이리스트 보여주기

@@ -9,7 +9,7 @@ import dev.music.sye.model.dto.SongInfoDTO;
 public interface PlayListService {
     
     // 플레이리스트 추가
-    void addPlayList(PlayListDTO playListDTO);
+    PlayListDTO addPlayList(PlayListDTO playListDTO);
 
     // 플레이리스트 DTO들을 반환해주는 서비스
     List<PlayListDTO> showPlayList();
