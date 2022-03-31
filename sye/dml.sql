@@ -1,12 +1,12 @@
 # PLAYLIST 테이블 테스트용 더미데이터
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FIRST', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/FIRST.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SECOND', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/SECOND.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('THIRD', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/THIRD.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FOURTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/FOURTH.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FIFTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/FIFTH.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SIXTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/SIXTH.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SEVENTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/SEVENTH.jpg?alt=media');
-INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('EIGHTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/EIGHTH.jpg?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FIRST', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist01.jfif?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SECOND', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist02.jfif?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('THIRD', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist03.jfif?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FOURTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist04.jpg?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('FIFTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist05.jpg?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SIXTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist06.jfif?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('SEVENTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist07.jfif?alt=media');
+INSERT INTO PLAYLIST(PLAYLIST_NAME, PLAYLIST_THUMBNAIL) VALUES ('EIGHTH', 'https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist08.png?alt=media');
 
 
 

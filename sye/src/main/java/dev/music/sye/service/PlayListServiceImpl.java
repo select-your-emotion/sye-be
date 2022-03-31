@@ -33,14 +33,19 @@ public class PlayListServiceImpl implements PlayListService{
         playList.setPlayListName(playListDTO.getPlayListName());
 
         // 랜덤으로 플레이리스트 썸네일 추출 및 Entity 에 세팅
-        String[] representativeThumbnail = { "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist.jpg?alt=media",
-                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist2.jpg?alt=media",
-                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist3.png?alt=media",
-                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist4.png?alt=media",
-                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist5.jpg?alt=media",
-                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist6.jpg?alt=media" };
+        String[] representativeThumbnail = { "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist01.jfif?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist02.jfif?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist03.jfif?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist04.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist05.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist06.jfif?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist07.jfif?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist08.png?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist09.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist10.jfif?alt=media"
+                                            };
 
-        String randomThumbnail = representativeThumbnail[(int)(Math.random() * 6)];
+        String randomThumbnail = representativeThumbnail[(int)(Math.random() * 10)];
         playList.setPlayListThumbnail(randomThumbnail);
 
         // PLAYLIST DB에 저장
