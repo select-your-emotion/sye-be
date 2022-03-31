@@ -25,14 +25,28 @@ public class PlayListServiceImpl implements PlayListService{
 
     // 플레이리스트 추가
     @Override
-    public void addPlayList(PlayListDTO playListDTO) {
+    public PlayListDTO addPlayList(PlayListDTO playListDTO) {
 
         // 테이블에 저장할 PlayList Entity 생성
         PlayList playList = new PlayList();
         playList.setPlayListName(playListDTO.getPlayListName());
-        playList.setPlayListThumbnail("https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist.jpg?alt=media");
 
+        // 랜덤으로 플레이리스트 썸네일 추출 및 Entity 에 세팅
+        String[] representativeThumbnail = { "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist2.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist3.png?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist4.png?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist5.jpg?alt=media",
+                                             "https://firebasestorage.googleapis.com/v0/b/sye-image.appspot.com/o/playlist6.jpg?alt=media" };
+
+        String randomThumbnail = representativeThumbnail[(int)(Math.random() * 6)];
+        playList.setPlayListThumbnail(randomThumbnail);
+
+        // PLAYLIST DB에 저장
         playListRepository.save(playList);
+
+        // 생성한 플레이리스트의 정보를 반환
+        return (new PlayListDTO(playList));
         
     }
 

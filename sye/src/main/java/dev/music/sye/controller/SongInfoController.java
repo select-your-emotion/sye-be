@@ -22,7 +22,7 @@ public class SongInfoController {
     }
 
     // 플레이리스트에 노래 추가
-    @PostMapping("/addsong")
+    @PostMapping()
     //public void addPlayList(@RequestParam PlayListDTO playListDTO) {
     public void addSong(@RequestBody SongInfoDTO songInfoDTO ) {
         songInfoService.addSong(songInfoDTO);
