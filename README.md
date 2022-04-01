@@ -15,12 +15,15 @@
 
 ## 🐰 맡은 역할
 ### Front
++ 이승현 : 
++ 김진주 : 
++ 이정훈 : 
 
 ### Back
- 
+ + 김민준 : Table 설계 및 Restful API 구현
 
 ## 📖 API Documentation
-+ [Overview](https://documenter.getpostman.com/view/19511452/UVypzd8x)
++ [Restful API Documentation](https://documenter.getpostman.com/view/19511452/UVypzd8x)
 + [spotify API](https://developer.spotify.com/console/)
 
 ## :mag:기능 구현
@@ -28,6 +31,7 @@
   + Spotify API를 이용한 로그인 기능
   + Spotify API를 이용한 앨범, 아티스트, 트랙 정보 검색 기능
   + 플레이리스트 생성 및 곡 추가 시 Back-end로 정보를 보내고 DB에 저장
+  + 플레이리스트 이름 
   + Spring 서버 중계를 통해 DB 연동
   + 사용 모듈
     + "axios": "0.26.1"
@@ -49,10 +53,9 @@
   + PlayListService
     + addPlayList : 새로운 플레이리스트 생성 후 플레이리스트 이름, 썸네일URL을 반환.
     + showPlayList : 생성되어 있는 플레이리스트들의 이름과 썸네일URL 리스트를 반환.
-    + updatePlayList : 플레이리스트의 이름을 변경  (어떤 값을 반환해야 할지 아직 프론트랑 상의 안됨, 추후 수정될 수 있음)
+    + updatePlayList : 플레이리스트의 이름을 변경  (추후 수정될 수 있음)
     + deletePlayList : 플레이리스트를 삭제, 플레이리스트에 있는 노래들도 모두 삭제, 반환값 없음.
     + showSongList : 현재 플레이리스트에 있는 노래들의 정보를 모두 반환함.
-    + increaseFollow : 좋아요 수 증가 (아직 구현 안됨, 우선순위 낮음)
     
  + SongInfoService
    + addSong : 플레이리스트에 해당 노래를 추가, 반환값 없음.
@@ -78,7 +81,30 @@
     + Switch - 자식 컴포넌트 Route또는 Redirect중 매치되는 첫 번째 요소를 렌더링합니다. 
     + Route - 컴포넌트 URL과 경로가 일치하면 해당하는 컴포넌트, 함수를 렌더링
     + Link - to속성에 설정된 링크로 이동, 기록이 history스택에 저장 ('a'태그와 유사한 기능)
-    
+
+  + DB 호출
+```   
+const BASE_URL = 'http://localhost:????????????';
+
+const ??? = (props) => {
+
+  const [???, set???] = useState([]);
+
+  useEffect(() => {
+
+    const fetchBooks = async () => {
+      const response = await fetch(BASE_URL,
+        {
+          method: 'POST',
+            headers: {
+              'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+              ???
+            })
+        });
+```
+
 ### Back-end
   + 테이블 설계  <br/>
   ![7](https://user-images.githubusercontent.com/59858894/161004653-cb34b6c1-008b-4b49-a97f-1ab8806811ec.PNG)
@@ -109,6 +135,13 @@
   + 서비스를 구현하는 메서드에 @Transactional 추가
 
 ## 🐻 개선해야 할 점
+### Front
++ CRUD 작업을 back에 요청 후 반환된 값을 받은 뒤 새로고침을 해야 적용되어 나타난다.
+  + Context로 관리하면 되나 시간 관계상 구현하지 못했다.
++ 플레이리스트를 클릭시 해당 플레이리스트에 대한 내용이 출력 되어야 하나 링크 연결이 되지 않는다. 
+
+### Back
 + 각 서비스 요청 시에 예외 처리가 구현되어 있지 않음
   + ex1 : 플레이리스트가 없는데 플레이리스트 삭제 요청을 하는 경우
   + ex2 : 플레이리스트에 노래가 없을 때 노래 삭제 요청을 하는 경우
++ Playlist Delete할 때 API로 보내는 값이 플레이리스트 이름 뿐이기 때문에 같은 이름의 플레이리스트가 있을 때, 플레이리스트가 삭제되지 않음
