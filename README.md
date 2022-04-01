@@ -107,7 +107,8 @@ const ??? = (props) => {
 
 ### Back-end
   + 테이블 설계  <br/>
-  ![7](https://user-images.githubusercontent.com/59858894/161004653-cb34b6c1-008b-4b49-a97f-1ab8806811ec.PNG)
+  ![11](https://user-images.githubusercontent.com/59858894/161178240-0212b903-99a7-497d-80ed-069c853907db.PNG)
+
 
 
 ## 🐭 실행 화면
