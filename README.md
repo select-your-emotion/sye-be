@@ -16,7 +16,7 @@
 ## 🐰 맡은 역할
 ### Front
 + 이승현 : Spotify api 연결 및 검색 기능 구현, 각 페이지 연동, CSS
-+ 김진주 : , DB연동 및 CRUD logic 구현, CSS
++ 김진주 : Spotify api를 통해 받아온 데이터를 Back의 Restful API와 통신, CSS
 + 이정훈 : View 초안 설계 및 sidebar route 구현, CSS
 
 ### Back
@@ -53,7 +53,7 @@
   + PlayListService
     + addPlayList : 새로운 플레이리스트 생성 후 플레이리스트 이름, 썸네일URL을 반환.
     + showPlayList : 생성되어 있는 플레이리스트들의 이름과 썸네일URL 리스트를 반환.
-    + updatePlayList : 플레이리스트의 이름을 변경
+    + updatePlayList : 플레이리스트의 이름을 변경, 반환값 없음.
     + deletePlayList : 플레이리스트를 삭제, 플레이리스트에 있는 노래들도 모두 삭제, 반환값 없음.
     + showSongList : 현재 플레이리스트에 있는 노래들의 정보를 모두 반환함.
     
@@ -85,7 +85,7 @@
     
   + react-redux - 앨범, 가수, 노래, 플레이리스트 등 정보를 받아오는 함수 정의 후 카테고리 형식에 맞게 받아와 정보 출력<br/>
   
-  + DB 호출
+  + Restful API 호출
 ```   
 const BASE_URL = 'http://localhost:????????????';
 
@@ -119,6 +119,8 @@ const ??? = (props) => {
 https://www.youtube.com/watch?v=yIjtxQzPwyo
 
 ## 🎨 LightHouse 측정
+![라하1](https://user-images.githubusercontent.com/59858894/161206157-db10cde4-aae4-4438-a1e7-d4ecf94ada2e.PNG)
+![라하2](https://user-images.githubusercontent.com/59858894/161206162-714234bf-c5e8-4c16-bc01-f596af672cb1.PNG)
 
 
 ## 🐯 Issue
@@ -126,13 +128,15 @@ https://www.youtube.com/watch?v=yIjtxQzPwyo
 + react 페이지 연동 오류
   + 각각의 페이지를 연동할 때, 각자 사용한 모듈의 버전이 달라 route가 되지 않았다.
   + react-router-dom을 6v -> 5v로 하양하여 연동하였다.
-+ 연동 후 각 기능 구현 오류
-  + 페이지 연동 후 기능이 정상적으로 작동하지 않았다.
-  + 상위 컴포넌트로 route를 이동하여 수정하였다.
+
++ Context API를 사용하여 중앙에서 데이터 관리를 하려고 하였으나, 제대로 사용하지 못하고 props로 사용하였다.
+
 + 서버로 데이터 sending시 반환값 undefined
   + 기존 서버에서 @GetMapping으로 데이터를 받아올 때 undefined를 반환받았다.
   + controller에 return이 없어서 반환하지 못했기 때문에 return을 추가하였다. 
-+ 노래 api를 구하기 어려워 크롤링을 이용한 노래 정보 받아오기->api를 찾아 구현을 하도록 함
+
++ 노래 api를 구하기 어려워 크롤링을 이용한 노래 정보 받아오기 
+  + api를 찾아 구현을 하도록 함
     
 ### Back-end
 + Repository에서 DB에 Native Query 요청 시 서버 실행이 되지 않는 문제
